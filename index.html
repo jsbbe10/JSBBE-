@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSBBE - Jeunesse Sportive Baladiat Bab Ezzouar</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f4f6f8; color: #333; padding-bottom: 70px; }
+        header { background-color: #006837; color: white; padding: 25px 15px; text-align: center; }
+        .header-container { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+        .logo-img { width: 110px; height: 110px; border-radius: 50%; background-color: white; object-fit: cover; border: 3px solid #ffffff; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+        header h1 { font-size: 22px; margin-top: 5px; }
+        header h2 { font-size: 15px; font-weight: normal; color: #e8f5e9; }
+        header p { font-size: 12px; color: #c8e6c9; margin-top: 4px; }
+        nav { background-color: #004d28; display: flex; justify-content: space-around; padding: 12px 5px; position: sticky; top: 0; z-index: 100; }
+        nav a { color: white; text-decoration: none; font-weight: bold; font-size: 12px; }
+        .container { padding: 15px; }
+        .card { background: white; border-radius: 10px; padding: 18px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .card h3 { color: #006837; margin-bottom: 12px; font-size: 18px; border-bottom: 2px solid #006837; padding-bottom: 6px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 12px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #006837; color: white; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        .location-tag { font-size: 11px; color: #006837; font-weight: bold; display: block; margin-top: 2px; }
+        .sections-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 10px; }
+        .section-item { background-color: #e8f5e9; border: 1px solid #c8e6c9; padding: 10px; border-radius: 6px; text-align: center; font-weight: bold; color: #004d28; font-size: 13px; }
+        .download-list { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
+        .download-item { display: flex; justify-content: space-between; align-items: center; background-color: #f8f9fa; border: 1px solid #e0e0e0; padding: 10px 12px; border-radius: 6px; }
+        .download-item span { font-weight: bold; font-size: 13px; color: #004d28; }
+        .btn-download { background-color: #006837; color: white; text-decoration: none; padding: 6px 12px; border-radius: 4px; font-size: 12px; font-weight: bold; }
+        .dossier-box { background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 12px; margin-bottom: 15px; border-radius: 4px; font-size: 13px; }
+        .dossier-box ul { margin-left: 20px; margin-top: 5px; }
+        form { display: flex; flex-direction: column; gap: 5px; }
+        label { font-size: 13px; font-weight: bold; color: #004d28; display: block; margin-top: 10px; }
+        input, select { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; }
+        .btn { background-color: #006837; color: white; font-weight: bold; border: none; padding: 12px; border-radius: 6px; width: 100%; margin-top: 15px; cursor: pointer; font-size: 15px; }
+        .whatsapp-float { position: fixed; width: 55px; height: 55px; bottom: 20px; right: 20px; background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center; font-size: 28px; box-shadow: 2px 2px 6px rgba(0,0,0,0.4); z-index: 1000; display: flex; align-items: center; justify-content: center; text-decoration: none; }
+        .info-list { list-style: none; line-height: 1.8; font-size: 14px; }
+        footer { text-align: center; padding: 15px; background-color: #006837; color: white; font-size: 12px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <img src="https://i.postimg.cc/wjq7txM7/logo.jpg" alt="Logo JSBBE" class="logo-img">
+            <div>
+                <h1>JSBBE</h1>
+                <h2>Jeunesse Sportive Baladiat Bab Ezzouar</h2>
+                <p>الشبيبة الرياضية لبلدية باب الزوار • Fondé en 2014</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#about">Présentation</a>
+        <a href="#planning">Planning</a>
+        <a href="#fiches">Fiches</a>
+        <a href="#inscription">Inscription</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+
+        <div class="card" id="about">
+            <h3>À propos du Club</h3>
+            <p>Bienvenue sur le site officiel de la <strong>Jeunesse Sportive Baladiat Bab Ezzouar (JSBBE)</strong>. Fondé en 2014, notre club propose un encadrement sportif complet et de qualité pour la jeunesse de la commune.</p>
+        </div>
+
+        <div class="card" id="sections">
+            <h3>Nos Sections Sportives</h3>
+            <div class="sections-grid">
+                <div class="section-item">⚽ Football</div>
+                <div class="section-item">🤾 Handball</div>
+                <div class="section-item">🥋 Judo</div>
+                <div class="section-item">🥋 Karaté-Do</div>
+                <div class="section-item">🥊 Kick-Boxing</div>
+                <div class="section-item">🏊 Natation</div>
+            </div>
+        </div>
+
+        <div class="card" id="planning">
+            <h3>Planning & Horaires des Entraînements</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Discipline / Catégorie</th>
+                        <th>Jours</th>
+                        <th>Horaires & Lieux</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Football (U7)</strong></td>
+                        <td>Ven / Sam</td>
+                        <td>Ven: 10h30 - 12h00<br>Sam: 11h30 - 13h00<span class="location-tag">📍 Parc Tito 05 Juillet</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Football (U9 / U11 / U13)</strong></td>
+                        <td>Ven / Sam</td>
+                        <td>18h30 - 20h00<span class="location-tag">📍 Stade feu Mohamed Bensalah</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kick-Boxing</strong></td>
+                        <td>Ven / Sam</td>
+                        <td>Ven: 16h00 - 17h30<br>Sam: 10h30 - 12h00</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Karaté-Do (École)</strong></td>
+                        <td>Ven / Sam</td>
+                        <td>17h30 - 18h30<span class="location-tag">📍 Salle De Sport Soummam</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Karaté-Do (Benjamin)</strong></td>
+                        <td>Ven / Sam</td>
+                        <td>18h30 - 20h00<span class="location-tag">📍 Salle De Sport Soummam</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Judo (École)</strong></td>
+                        <td>Ven / Sam</td>
+                        <td>Ven: 14h30 - 16h00<br>Sam: 13h00 - 14h30<span class="location-tag">📍 Salle De Sport Soummam</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Judo (Benjamin)</strong></td>
+                        <td>Lun / Jeu</td>
+                        <td>15h00 - 17h30<span class="location-tag">📍 Salle De Sport Soummam</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Handball</strong></td>
+                        <td>Ven / Sam</td>
+                        <td>18h00 - 20h00<span class="location-tag">📍 Salle Akli Mohand Oulhadj</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Natation</strong></td>
+                        <td>Ven / Sam</td>
+                        <td>Matinée<span class="location-tag">📍 Parc Tito 05 Juillet</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card" id="fiches">
+            <h3>Télécharger les Fiches d'Inscription</h3>
+            <p style="font-size: 13px; color: #555; margin-bottom: 12px;">Téléchargez la fiche d'inscription au format Word correspondant à votre discipline :</p>
+            
+            <div class="download-list">
+                <div class="download-item">
+                    <span>⚽ Section Football</span>
+                    <a href="Section FOOTBALL.docx" class="btn-download" download>📥 Télécharger</a>
+                </div>
+                <div class="download-item">
+                    <span>🤾 Section Handball</span>
+                    <a href="Section HANDBALL.docx" class="btn-download" download>📥 Télécharger</a>
+                </div>
+                <div class="download-item">
+                    <span>🥋 Section Judo</span>
+                    <a href="Section JUDO.docx" class="btn-download" download>📥 Télécharger</a>
+                </div>
+                <div class="download-item">
+                    <span>🥋 Section Karaté-Do</span>
+                    <a href="Section KARATÉ-DO.docx" class="btn-download" download>📥 Télécharger</a>
+                </div>
+                <div class="download-item">
+                    <span>🥊 Section Kick-Boxing</span>
+                    <a href="Section KICK-BOXING.docx" class="btn-download" download>📥 Télécharger</a>
+                </div>
+                <div class="download-item">
+                    <span>🏊 Section Natation</span>
+                    <a href="Section Natation.docx" class="btn-download" download>📥 Télécharger</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="inscription">
+            <h3>Fiche de Pré-inscription en ligne</h3>
+            <div class="dossier-box">
+                <strong>📄 Dossier d'inscription à fournir :</strong>
+                <ul>
+                    <li>02 photos d'identité</li>
+                    <li>02 extraits d'acte de naissance (N°12)</li>
+                    <li>Certificat médical d'aptitude (+ ECG)</li>
+                    <li>Autorisation paternelle légalisée</li>
+                    <li>Cotisation annuelle (non remboursable)</li>
+                </ul>
+            </div>
+
+            <form action="https://formspree.io/f/mljdkwga" method="POST">
+                <label>Nom complet de l'adhérent(e) :</label>
+                <input type="text" name="nom_complet" placeholder="Nom et Prénom" required>
+
+                <label>Date et lieu de naissance :</label>
+                <input type="text" name="date_lieu_naissance" placeholder="JJ/MM/AAAA à..." required>
+
+                <label>Discipline choisie :</label>
+                <select name="discipline" required>
+                    <option value="">-- Choisissez une discipline --</option>
+                    <option value="Football U7">Football (U7)</option>
+                    <option value="Football U9-U13">Football (U9 - U11 - U13)</option>
+                    <option value="Handball">Handball</option>
+                    <option value="Judo École">Judo (École)</option>
+                    <option value="Judo Benjamin">Judo (Benjamin)</option>
+                    <option value="Karaté École">Karaté-Do (École)</option>
+                    <option value="Karaté Benjamin">Karaté-Do (Benjamin)</option>
+                    <option value="Kick-Boxing">Kick-Boxing</option>
+                    <option value="Natation">Natation</option>
+                </select>
+
+                <label>Nom du tuteur légal :</label>
+                <input type="text" name="nom_tuteur" placeholder="Nom et prénom du responsable" required>
+
+                <label>Téléphone de contact :</label>
+                <input type="tel" name="telephone" placeholder="0550 29 38 89" required>
+
+                <button type="submit" class="btn">Soumettre la Pré-inscription</button>
+            </form>
+        </div>
+
+        <div class="card" id="contact">
+            <h3>Coordonnées & Contact</h3>
+            <ul class="info-list">
+                <li>📍 <strong>Siège :</strong> Salle De Sport Soummam, Bab Ezzouar</li>
+                <li>📞 <strong>Informations :</strong> 0550 29 38 89</li>
+                <li>💬 <strong>WhatsApp direct :</strong> <a href="https://wa.me/213561236008" style="color: #006837; font-weight: bold;">0561 23 60 08</a></li>
+                <li>✉ <strong>E-mail :</strong> jsbbe10@gmail.com</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <a href="https://wa.me/213561236008" class="whatsapp-float" target="_blank" title="Contactez-nous sur WhatsApp">💬</a>
+
+    <footer>
+        <p>&copy; 2026 JSBBE - Jeunesse Sportive Baladiat Bab Ezzouar</p>
+    </footer>
+
+</body>
+</html>
